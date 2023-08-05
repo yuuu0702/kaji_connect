@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class ElevatedCardExample extends StatelessWidget {
+class ElevatedCardExample extends ConsumerWidget {
   const ElevatedCardExample({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(title: const Text("今日も頑張ろう！")),
       body: Column(
@@ -19,11 +20,13 @@ class ElevatedCardExample extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 32),
-          const Card(
+          Card(
             child: SizedBox(
               width: 364,
               height: 112,
-              child: Center(child: Text('Elevated Card')),
+              child: Center(
+                child: Text(style: const TextStyle(fontSize: 36), '残り 3 つ'),
+              ),
             ),
           ),
         ],
