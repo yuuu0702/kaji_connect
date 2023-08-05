@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'home_screen.dart';
+
 class CheckboxListTileRiverpod extends ConsumerWidget {
   CheckboxListTileRiverpod({Key? key}) : super(key: key);
 
@@ -44,7 +46,14 @@ class CheckboxListTileRiverpod extends ConsumerWidget {
               itemCount: kajinameMock.length,
             ),
           ),
-          FilledButton(onPressed: () {}, child: const Text('次へ'))
+          FilledButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ElevatedCardExample()));
+              },
+              child: const Text('次へ'))
         ],
       ),
     );
