@@ -80,14 +80,14 @@ final todosProvider = StateNotifierProvider<TodosNotifier, List<Todo>>((ref) {
 });
 
 class CheckboxListTileRiverpod extends ConsumerWidget {
-  CheckboxListTileRiverpod({Key? key}) : super(key: key);
+  const CheckboxListTileRiverpod({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     List<Todo> todos = ref.watch(todosProvider);
 
     return Scaffold(
-      appBar: AppBar(title: const Text("家事をえらんでね")),
+      appBar: AppBar(title: const Text("家事洗濯")),
       body: Column(
         children: [
           //家事リストビュー
